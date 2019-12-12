@@ -33,8 +33,8 @@ function add(scheme) {
     .insert(scheme, 'id')
     .then(id => {
       return db('schemes')
-        .select('*')
-        .where({ id: id[0] });
+        .where({ id: id[0] })
+        .first();
     });
 }
 
@@ -51,9 +51,7 @@ function update(editedScheme, id) {
     .where({ id })
     .update(editedScheme)
     .then(() => {
-      return db('schemes')
-        .where({ id })
-        .first();
+      return findById(id);
     });
 }
 
