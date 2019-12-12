@@ -49,7 +49,7 @@ function addStep(step, id) {
 function update(editedScheme, id) {
   return db('schemes')
     .where({ id })
-    .update(editedScheme, 'id')
+    .update(editedScheme)
     .then(() => {
       return db('schemes')
         .where({ id })
