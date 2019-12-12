@@ -52,7 +52,6 @@ function update(editedScheme, id) {
     .update(editedScheme, 'id')
     .then(() => {
       return db('schemes')
-        .select('*')
         .where({ id })
         .first();
     });
