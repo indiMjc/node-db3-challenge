@@ -43,7 +43,7 @@ function addStep(step, id) {
     ...step,
     scheme_id: id
   };
-  return db('steps').insert(stepData, 'id');
+  return db('steps').insert(stepData);
 }
 
 function update(editedScheme, id) {
